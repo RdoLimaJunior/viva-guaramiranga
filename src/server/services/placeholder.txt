@@ -1,0 +1,1 @@
+Este diretório destina-se à lógica de negócio e serviços do backend em Python.

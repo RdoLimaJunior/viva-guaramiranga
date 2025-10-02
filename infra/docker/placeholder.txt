@@ -1,0 +1,1 @@
+Este diretório contém os Dockerfiles e as configurações do docker-compose.

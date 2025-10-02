@@ -1,0 +1,1 @@
+Este diretório destina-se a workers assíncronos em Python (ex: Celery).

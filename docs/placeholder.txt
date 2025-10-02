@@ -1,0 +1,1 @@
+Este diretório destina-se à documentação do projeto, diagramas de arquitetura e guias.

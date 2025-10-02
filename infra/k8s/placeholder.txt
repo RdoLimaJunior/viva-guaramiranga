@@ -1,0 +1,1 @@
+Este diretório contém os manifestos de deploy do Kubernetes.

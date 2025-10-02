@@ -1,0 +1,1 @@
+Este diretório destina-se aos endpoints da API do backend em Python (ex: FastAPI, Flask).

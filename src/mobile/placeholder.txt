@@ -1,0 +1,1 @@
+Este diretório destina-se ao código-fonte do aplicativo mobile em React Native.
