@@ -56,6 +56,7 @@ const App: React.FC = () => {
   const [error, setError] = useState('');
 
   const handleSelection = (key: keyof Preferences, value: string, multiple: boolean) => {
+    const isLastStep = step === STEPS.length;
     if (multiple) {
       setPreferences(prev => ({
         ...prev,
@@ -65,7 +66,9 @@ const App: React.FC = () => {
       }));
     } else {
       setPreferences(prev => ({ ...prev, [key]: value }));
-      setTimeout(() => setStep(s => s + 1), 300); // Avança automaticamente
+      if (!isLastStep) {
+        setTimeout(() => setStep(s => s + 1), 300); // Avança automaticamente, exceto na última etapa
+      }
     }
   };
 
@@ -124,6 +127,7 @@ const App: React.FC = () => {
 
     if (step > 0 && step <= STEPS.length) {
       const currentStep = STEPS[step - 1];
+      const isLastStep = step === STEPS.length;
       return (
         <div className="w-full">
           <h2 className="text-3xl font-bold mb-8 text-center text-gray-200">{currentStep.title}</h2>
@@ -157,6 +161,17 @@ const App: React.FC = () => {
               >
                 Próximo
               </button>
+            </div>
+          )}
+          {isLastStep && (
+             <div className="text-center mt-8">
+                <button
+                  onClick={generateItinerary}
+                  disabled={!preferences.duration}
+                  className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105 disabled:bg-gray-600 disabled:cursor-not-allowed"
+                >
+                  Gerar Meu Roteiro!
+                </button>
             </div>
           )}
         </div>
